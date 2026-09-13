@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         int totalSubsets = 1 << n; // 2^n
         vector<vector<int>> result;
-        result.reserve(totalSubsets);
+     
 
         // Iterate through all masks from 0 to 2^n - 1
         for (int mask = 0; mask < totalSubsets; ++mask) {
