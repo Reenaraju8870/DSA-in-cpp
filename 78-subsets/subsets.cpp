@@ -15,7 +15,7 @@ public:
                     subset.push_back(nums[i]);
                 }
             }
-            result.push_back(move(subset));
+            result.push_back(subset);
         }
 
         return result;
