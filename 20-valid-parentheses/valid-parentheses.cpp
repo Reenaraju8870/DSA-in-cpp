@@ -1,13 +1,23 @@
 class Solution {
 public:
+    bool isPair(char last, char curr){
+        return (last=='(' && curr==')') || (last=='[' && curr==']') || (last=='{' && curr=='}');
 
+    }
     bool isValid(string s) {
+    
         stack<char> stack;
-        unordered_map<char,char> mapping={{')', '('}, {']', '['}, {'}', '{'}};
-        for(char ch:s){
-            if(mapping.find(ch)==mapping.end()) stack.push(ch);
-            else if(!stack.empty() && mapping[ch]==stack.top()) stack.pop();
-            else return false;
+        
+        for(char curr:s){
+            if(!stack.empty()){
+                char last=stack.top();
+                if(isPair(last,curr)){
+                    stack.pop();
+                    continue;
+                }
+            }
+            stack.push(curr);
+
         }
         return stack.empty();
         
