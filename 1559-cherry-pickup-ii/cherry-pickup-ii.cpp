@@ -18,7 +18,7 @@ public:
         }
 
 
-        int futurech=-1e9;
+        int futurech=0;
         for(int a=-1;a<=1;a++){      
             for(int b=-1;b<=1;b++){
                 int cherries=Solver(i+1,j1+a,j2+b,n,m,grid,dp);
