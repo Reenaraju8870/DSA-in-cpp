@@ -7,8 +7,8 @@ public:
        if(dp[i][j]!=-1) return dp[i][j];
        int right=getAns(i+1,j,n,m,dp,obstacleGrid);
        int down=getAns(i,j+1,n,m,dp,obstacleGrid);
-       dp[i][j]=right+down; 
-       return dp[i][j];
+       
+       return dp[i][j]=right+down;
        
 
 
