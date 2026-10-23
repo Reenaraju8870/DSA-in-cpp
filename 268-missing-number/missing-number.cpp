@@ -1,7 +1,7 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n=nums.size();
+        int n=nums.size();     //OPTIMAL 1
         int expected = n * (n + 1) / 2;
         int actual=0;
 
