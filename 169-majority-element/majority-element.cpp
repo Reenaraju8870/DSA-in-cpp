@@ -4,11 +4,11 @@ public:
         map<int,int> mpp;             //better using ordered map (val,freq)
         int major=0;
         int n=nums.size();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n;i++){            //O(n)
             mpp[nums[i]]++;
         }
         
-        for(auto it:mpp){
+        for(auto it:mpp){              //o(nlogn)
             if(it.second>(n/2)){
                 major=it.first;
             }
