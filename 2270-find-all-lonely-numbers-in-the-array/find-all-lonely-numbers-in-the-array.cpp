@@ -1,18 +1,22 @@
 class Solution {
 public:
     vector<int> findLonely(vector<int>& nums) {
-        map<int,int> mpp;
+        sort(nums.begin(),nums.end());
         vector<int> ans;
-        for(int i=0;i<nums.size();i++){
-            mpp[nums[i]]++;
+        if(nums.size()<=1){
+            return nums;
         }
-        for(auto it:mpp){
-            if(it.second==1){
-                if(mpp.find(it.first+1)==mpp.end() && mpp.find(it.first-1)==mpp.end()){
-                    ans.push_back(it.first);
-                }
+        if(nums[0]+1<nums[1]){
+            ans.push_back(nums[0]);
+        }
+        for(int i=1;i<nums.size()-1;i++){
+            if(nums[i+1]-nums[i] > 1 && nums[i]-nums[i-1] > 1){
+                ans.push_back(nums[i]);
             }
         }
-        return ans;
+        if(nums[nums.size()-1]>nums[nums.size()-2]+1){
+            ans.push_back(nums[nums.size()-1]);
+        }
+        return ans; 
     }
 };
